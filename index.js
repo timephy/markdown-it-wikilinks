@@ -29,7 +29,7 @@ module.exports = (options) => {
     postProcessPageHash: (pageHash) => {
       pageHash = pageHash.trim()
       pageHash = pageHash.split('/').map(sanitize).join('/')
-      pageHash = pageHash.replace(/\s+/g, '_')
+      pageHash = pageHash.replace(/\s+/g, '%20')
       return pageHash
     },
     postProcessLabel: (label) => {
