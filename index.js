@@ -29,8 +29,8 @@ module.exports = (options) => {
     postProcessPageHash: (pageHash) => {
       pageHash = pageHash.trim()
       pageHash = pageHash.split('/').map(sanitize).join('/')
-      pageHash = encodeURIComponent(pageHash)
-      // pageHash = pageHash.replace(/\s+/g, '%20')
+      pageHash = pageHash.replaceAll(' ', '-')
+      // pageHash = encodeURIComponent(pageHash)
       return pageHash
     },
     postProcessLabel: (label) => {
