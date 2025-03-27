@@ -29,7 +29,8 @@ module.exports = (options) => {
     postProcessPageHash: (pageHash) => {
       pageHash = pageHash.trim()
       pageHash = pageHash.split('/').map(sanitize).join('/')
-      pageHash = pageHash.replace(/\s+/g, '%20')
+      pageHash = encodeURIComponent(pageHash)
+      // pageHash = pageHash.replace(/\s+/g, '%20')
       return pageHash
     },
     postProcessLabel: (label) => {
@@ -47,7 +48,8 @@ module.exports = (options) => {
   options = extend(true, defaults, options)
 
   function isAbsolute(pagePath) {
-    return options.makeAllLinksAbsolute || pagePath.charCodeAt(0) === 0x2F/* / */
+    // return options.makeAllLinksAbsolute || pagePath.charCodeAt(0) === 0x2F/* / */
+    return (options.makeAllLinksAbsolute || pagePath.charCodeAt(0) === 0x2F) && pagePath.charCodeAt(0) !== 0x23 /* / */
   }
 
   /**
