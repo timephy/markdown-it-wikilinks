@@ -41,7 +41,7 @@
   "dependencies": {
     "extend": "^3.0.2",
     "markdown-it-regexp": "^0.4.0",
-    "reurl": "git+https://github.com/jsepia/reurl.git#commonjs",
+    "reurl": "git+https://github.com/jsepia/reurl.git#9c4d4d6c41d980e0490822fd5cd25e36e66e2647",
     "sanitize-filename": "^1.6.3"
   }
 }
